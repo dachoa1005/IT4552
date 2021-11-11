@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <table class="header">
+        <tr>
+            <td class="detail">
+                <div class="form">
+                    Personal Details
+                    <textarea name="detail" id="detail" cols="70" rows="10"></textarea>
+                </div>
+            </td>
+            <td class="image">
+                <div class="imgbox">
+                    Image
+                    <img src="">  
+                    <input type="file" class="custom-file-input" required />                  
+                </div>                
+            </td>
+        </tr> 
+        </table>
+        <table class="infomation">
+        <tr>
+            <td class="title">Education process</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td class="title">Working process</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>  
+        <tr>
+            <td class="title">Society activities</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>  
+        <tr>
+            <td class="title">Skills</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td class="title">Experiences</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td class="title">Certifications</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>  
+        <tr>
+            <td class="title">Hobbies</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td class="title">Desire</td>
+            <td class="info">
+                <input type="text">
+            </td>
+        </tr>    
+        </table>
+    </div>  
+    <script>
+        const reader = new FileReader();
+        const file = document.querySelector('.custom-file-input');
+        file.addEventListener("change",(event)=>{
+            const files = event.target.files;
+            reader.readAsDataURL(files[0]);
+            reader.addEventListener("load",(event)=>{
+                const url = event.target.result;
+                document.querySelector('img').src = url;
+            })            	
+        })
+    </script>  
+</body>
+</html>
